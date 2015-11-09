@@ -1,0 +1,56 @@
+@import "normalize.css/normalize";
+
+body {
+  background-color: rgb(95, 184, 100);
+  min-height: 100vh;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  > section {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(39, 244, 145);
+    flex: 1;
+
+    aside {
+      background-color: rgb(223, 235, 197);
+      min-width: 180px;
+    }
+
+    ul {
+      padding-left: 0;
+      list-style: none;
+
+      li {
+        font-size: 1.5em;
+        padding: 20px;
+
+        a {
+          display: block;
+        }
+
+        &.current {
+          background-color: rgb(25, 246, 230);
+        }
+      }
+    }
+  }
+}
+
+header {
+  text-align: center;
+}
+
+footer {
+  padding: 20px;
+  background-color: rgb(9, 204, 88);
+  text-align: center;
+}
+
+main {
+  padding: 20px;
+}

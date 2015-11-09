@@ -18,8 +18,8 @@ gulp.task('html', () => {
 
 gulp.task('script', () => {
   browserify({
-      entries: ['./src/scripts/main.js'],
-      extension: ['.js'],
+      entries: ['./src/scripts/main.jsx'],
+      extensions: ['.js', '.jsx'],
       debug: true
     }).transform(babelify).bundle()
     .on('error', function(err) {
@@ -44,7 +44,12 @@ gulp.task('styles', () => {
     }));
 });
 
-gulp.task('build', ['html', 'script', 'styles']);
+gulp.task('images', () => {
+  gulp.src('src/images/**/*.{png,gif,jpg}')
+    .pipe(gulp.dest('dist/images'))
+});
+
+gulp.task('build', ['html', 'script', 'styles', 'images']);
 
 gulp.task("deploy", ["build"], () => {
   ghPages.publish("dist");
@@ -57,7 +62,8 @@ gulp.task('serve', ['build'], () => {
 
   gulp.watch('src/**/*.{html,jade}', ['html']);
   gulp.watch('src/**/*.{scss,sass}', ['styles']);
-  gulp.watch('src/**/*.js', ['script'])
+  gulp.watch('src/**/*.{png,gif,jpg}', ['images'])
+  gulp.watch('src/**/*.{js,jsx}', ['script'])
 });
 
 gulp.task('default', ['serve']);
