@@ -1,8 +1,20 @@
 @import "normalize.css/normalize";
 
 body {
-  background-color: rgb(95, 184, 100);
+  background-color: #000;
+  color: #fff;
+  text-shadow: 0 0 4px #000;
   min-height: 100vh;
+  margin-bottom: auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Arya", sans-serif;
+  font-size: 16pt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Tino", serif;
 }
 
 .app {
@@ -13,12 +25,16 @@ body {
   > section {
     display: flex;
     flex-direction: row;
-    background-color: rgb(39, 244, 145);
+    //background-color: rgb(39, 244, 145);
     flex: 1;
 
     aside {
-      background-color: rgb(223, 235, 197);
-      min-width: 180px;
+      background-color: rgba(0, 0, 0, .5);
+      min-width: 140px;
+
+      .logo {
+        text-align: center;
+      }
     }
 
     ul {
@@ -27,14 +43,22 @@ body {
 
       li {
         font-size: 1.5em;
-        padding: 20px;
+        padding: 15px;
+        text-align: right;
 
         a {
           display: block;
+          color: #ffe070;
+          text-decoration: none;
         }
 
         &.current {
-          background-color: rgb(25, 246, 230);
+          background-color: #ffe070;
+          a {
+            color: #000;
+            text-shadow: 0 0 10px #999;
+          }
+          //background-color: rgb(25, 246, 230);
         }
       }
     }
@@ -43,14 +67,56 @@ body {
 
 header {
   text-align: center;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+p {
+  text-indent: 50px;
 }
 
 footer {
   padding: 20px;
-  background-color: rgb(9, 204, 88);
+  background-color: rgba(0, 0, 0, .5);
   text-align: center;
 }
 
 main {
   padding: 20px;
+  flex: 1;
 }
+
+.player {
+  text-align: center;
+}
+
+.home {
+  background-image: url("https://farm6.staticflickr.com/5743/22432714660_2af6bc43ea_b.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-width: 400px;
+  padding-top: 550px;
+  padding-right: 150px;
+  padding-left: 50px;
+}
+
+
+.events {
+  margin: 0 auto;
+  max-width: 600px;
+  a:visited {
+    color: #ffe070;
+  }
+  }
+
+
+  .listen {
+    background-image: url("https://farm6.staticflickr.com/5832/22400445107_982ac5bd77.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+
+  .history {
+    text-width: 400px;
+    padding-right: 150px;
+  }

@@ -44,14 +44,18 @@ var App = React.createClass({
         currentPage = <Home />;
     }
 
-
     return (
       <div className="app">
         <header>
-          <h1>Jazz on the Deuces</h1>
+          <h1>Jazz: The Deuces and Beyond</h1>
         </header>
         <section>
           <aside>
+            <div className="logo">
+              <a href="http://www.live365.com/stations/member_12525528306">
+                <img border="0" src="https://s3.amazonaws.com/ugc_production.parse.com/parse_app_metadata/372327/jazz-logo.png?1447070559" />
+              </a>              
+            </div>
             <ul>
               <NavigationItem to="" label="Home" />
               <NavigationItem to="#history" label="History" />
@@ -62,7 +66,7 @@ var App = React.createClass({
           <main>{currentPage}</main>
         </section>
         <footer>
-          Made with &hearts; by Sandra Gadsden @ The Iron Yars in St Petersburg, Fl.
+          Made with &hearts; by Sandra J. Gadsden @ The Iron Yard in St. Petersburg, Fla.
         </footer>
       </div>
     );
